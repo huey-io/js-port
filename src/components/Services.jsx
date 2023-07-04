@@ -39,7 +39,7 @@ const Services = () => {
     return (
         <Section title={
 
-            <div className="flex items-center">
+            <div className="flex flex-shrink-0">
                 <img src={skills} alt="skills" className="w-10 h-10 mr-2" />
                 Services
             </div>

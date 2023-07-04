@@ -13,3 +13,24 @@
 .hide-down-arrow {
   display: none;
 }
+
+.txt {
+  display: inline-block;
+  min-width: 0;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.hero-script-container {
+  height: 1.2em;
+}
+
+.skill-script-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.tool-script-container {
+  width: 100%; /* Adjust the width to your desired value */
+  overflow: hidden;
+}

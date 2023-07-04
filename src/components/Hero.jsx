@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react';
 import { FaTwitter, FaGithub, FaLinkedin, FaArrowDown } from 'react-icons/fa';
 import Avatar from './Avatar';
-import TypewriteHero from './TypewriteHero';
+import HeroScript from './HeroScript';
 
 
 const Hero = () => {
 
     const text = [
-        'Hello ',
-        '👋🏾',
-        ', welcome to my site. I am a frontend software engineer. I love to write code and work on projects.',
+
+        'Hello, 👋  welcome to my site. I am a frontend software engineer. I love to write code and work on projects.',
       ];
 
 
@@ -53,17 +52,19 @@ const Hero = () => {
 
 
     return (
-        <section className='min-h-screen flex flex-col justify-start items-center p-5 text-center'>
-            <h2 className='text-5xl text-cyan-400 uppercase font-bold'>Huey io</h2>
+        <section className='min-h-screen flex flex-col justify-start items-center p-5 text-center flex-shrink-0'>
+            <h2 className='text-5xl text-cyan-400 uppercase font-bold'>Huey.Io</h2>
 
             <h3 className='py-3 text-2xl'>FrontEnd Developer</h3>
-            <span className='text-cyan-400'>
-        <TypewriteHero words={text} typingSpeed={300} deletionDelay={1700} />
-      </span>
-      <p className='max-w-xl font-light text-gray-500'>
+            <span className='text-cyan-400 flex-shrink-0 inline-block'>
+  <HeroScript words={text} typingSpeed={7700 / text[0].length} deletionDelay={700} />
+</span>
+
+{/* <p dangerouslySetInnerHTML={{ __html: text }}></p>; */}
+      {/* <p className='max-w-xl font-light text-gray-500'>
         Hello <span className='animate-pulse text-4xl'>👋🏾</span>, welcome to my site. I am a frontend software
         engineer. I love to write code and work on projects.
-      </p>
+      </p> */}
           
 
 

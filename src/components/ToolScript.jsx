@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-const TypewriteHero = ({ words, typingSpeed, deletionDelay }) => {
+const ToolScript = ({ words, typingSpeed, deletionDelay }) => {
   const [displayText, setDisplayText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -8,11 +8,12 @@ const TypewriteHero = ({ words, typingSpeed, deletionDelay }) => {
   useEffect(() => {
     const type = () => {
       const currentWord = words[currentIndex];
+      const currentChar = currentWord.charAt(displayText.length);
 
       if (isDeleting) {
         setDisplayText((prevText) => prevText.slice(0, -1));
       } else {
-        setDisplayText((prevText) => prevText + currentWord);
+        setDisplayText((prevText) => prevText + currentChar);
       }
 
       let typeSpeed = typingSpeed;
@@ -27,12 +28,9 @@ const TypewriteHero = ({ words, typingSpeed, deletionDelay }) => {
         }, deletionDelay);
       } else if (isDeleting && displayText === '') {
         setIsDeleting(false);
-        setCurrentIndex(0);
-        setDisplayText('');
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
       } else if (!isDeleting && displayText === currentWord) {
         setIsDeleting(true);
-      } else {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
       }
     };
 
@@ -43,7 +41,11 @@ const TypewriteHero = ({ words, typingSpeed, deletionDelay }) => {
     };
   }, [displayText, isDeleting, currentIndex, words, typingSpeed, deletionDelay]);
 
-  return <p className='max-w-xl font-light text-gray-500'>{displayText}</p>;
+  return (
+    <div className="tool-script-container">
+      <span className="txt">{displayText}</span>
+    </div>
+  );
 };
 
-export default TypewriteHero;
+export default ToolScript;

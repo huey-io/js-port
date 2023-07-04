@@ -1,6 +1,7 @@
 import React from 'react';
 import Section from './common/Section';
-import Typewriter from 'react-typewriter-effect';
+import SkillScript from './SkillScript';
+import ToolScript from './ToolScript';
 import book from '../assets/book.png';
 import angular from '../assets/angular.png';
 import tailwind from '../assets/tailwind.png';
@@ -9,7 +10,6 @@ import python from '../assets/puthon.png';
 import node from '../assets/nodejs.png';
 import mysql from '../assets/mysql.png';
 import mongo from '../assets/mongo.png';
-import TypewriterEffect from './TypewriterEffect';
 
 const Skills = () => {
   const SKILLS = [
@@ -44,11 +44,56 @@ const Skills = () => {
       name: 'MongoDB',
     },
     {
-        id: 7,
-        image: mysql,
-        name: 'mySQL',
-      },
+      id: 7,
+      image: mysql,
+      name: 'mySQL',
+    },
   ];
+
+  const Tools = () => {
+    const TOOLS = [
+      {
+        id: 1,
+        name: 'Vscode',
+      },
+      {
+        id: 2,
+        name: 'Npm',
+      },
+      {
+        id: 3,
+        name: 'Git',
+      },
+      {
+        id: 4,
+        name: 'Amazon Web Services',
+      },
+      {
+        id: 5,
+        name: 'Figma',
+      },
+      {
+        id: 6,
+        name: 'Canva',
+      },
+    ];
+
+    const firstWordLength = TOOLS[0].name.length;
+    const typingSpeed = 750 / firstWordLength; // Calculate typing speed dynamically
+
+    return (
+      <div>
+        <h3 className="font-semibold">Tools:</h3>
+        <span className="text-cyan-400">
+          <ToolScript
+            words={TOOLS.map(({ name }) => name)}
+            typingSpeed={typingSpeed} // Use the calculated typing speed
+            deletionDelay={1300} // Changed deletion delay to 1300ms
+          />
+        </span>
+      </div>
+    );
+  };
 
   return (
     <Section
@@ -60,7 +105,7 @@ const Skills = () => {
       }
       subtitle="Below is a list of programming languages and technologies I use"
     >
-      <div className="flex flex-col md:flex-row max-w-3xl mx-auto gap-8 p-4">
+      <div className="flex flex-col md:w-70 max-w-3xl mx-auto gap-8 p-4">
         <div className="flex flex-col md:w-70">
           <h2 className="text-2xl font-semibold mb-4">Programming Languages</h2>
           <div className="flex flex-wrap gap-3">
@@ -69,25 +114,20 @@ const Skills = () => {
             ))}
           </div>
         </div>
-        <div className="flex flex-col flex-1">
+        <div className="flex flex-col w-96">
           <h2 className="text-2xl font-semibold mb-4">Information</h2>
           <div>
             <h3 className="font-semibold">Technologies:</h3>
-           <span className='text-cyan-400'> <TypewriterEffect words={SKILLS.map(({ name }) => name)} wait={1500} /></span>
+            <span className="text-cyan-400 inline-block">
+              <SkillScript
+                words={SKILLS.map(({ name }) => name)}
+                typingSpeed={750 / SKILLS[0].name.length} // Adjusted typing speed calculation
+                deletionDelay={1300} // Changed deletion delay to 1300ms
+              />
+            </span>
           </div>
-          <div>
-            <h3 className="font-semibold">Tools:</h3>
-            <Typewriter
-              options={{
-                strings: SKILLS.map(({ name }) => name),
-                autoStart: true,
-                loop: true,
-              }}
-            />
-          </div>
-          <div>
-
-            
+          <div className="mt-4">
+            <Tools />
           </div>
         </div>
       </div>
