@@ -9,17 +9,17 @@ const Contact = () => {
         {
             id: 1,
             icon: <FaTwitter />,
-            url: 'https://www.twitter.com/',
+            url: 'https://www.twitter.com/huey_io',
         },
         {
             id: 2,
             icon: <FaGithub />,
-            url: 'https://www.github.com/',
+            url: 'https://www.github.com/huey-io',
         },
         {
             id: 3,
             icon: <FaLinkedin />,
-            url: 'https://www.linkedin.com/',
+            url: 'https://www.linkedin.com/in/shavon-levy-4b5a051b1/',
         },
     ];
 

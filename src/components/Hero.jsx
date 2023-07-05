@@ -16,18 +16,19 @@ const Hero = () => {
         {
             id: 1,
             icon: <FaTwitter />,
-            url: 'https://www.twitter.com/',
+            url: 'https://www.twitter.com/huey_io',
         },
         {
             id: 2,
             icon: <FaGithub />,
-            url: 'https://www.github.com/',
+            url: 'https://www.github.com/huey-io',
         },
         {
             id: 3,
             icon: <FaLinkedin />,
-            url: 'https://www.linkedin.com/',
+            url: 'https://www.linkedin.com/in/shavon-levy-4b5a051b1/',
         },
+        
     ];
 
     useEffect(() => {
@@ -53,7 +54,7 @@ const Hero = () => {
 
     return (
         <section className='min-h-screen flex flex-col justify-start items-center p-5 text-center flex-shrink-0'>
-            <h2 className='text-5xl text-cyan-400 uppercase font-bold'>Huey.Io</h2>
+            <h2 className='text-5xl text-cyan-400 uppercase font-bold'>Shavon Levy</h2>
 
             <h3 className='py-3 text-2xl'>FrontEnd Developer</h3>
             <span className='text-cyan-400 flex-shrink-0 inline-block'>

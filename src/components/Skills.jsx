@@ -107,7 +107,7 @@ const Skills = () => {
     >
       <div className="flex flex-col md:w-70 max-w-3xl mx-auto gap-8 p-4">
         <div className="flex flex-col md:w-70">
-          <h2 className="text-2xl font-semibold mb-4">Programming Languages</h2>
+          <h2 className="text-2xl font-semibold mb-4 pr-3 md:p-2">Programming Languages</h2>
           <div className="flex flex-wrap gap-3">
             {SKILLS.map(({ id, image, name }) => (
               <img key={id} src={image} alt={name} className="w-10 h-10" />
